@@ -1,0 +1,18 @@
+models:
+  AnimalSpecies:
+    name: string
+    relationships:
+      hasMany: Animals
+  Breed:
+    name: string
+    relationships:
+      hasMany: Animals
+  Animal:
+    name: string
+    breed_id: id foreign
+    bithdate: date
+    image: string nullable
+    animalspecies_id: id foreign
+
+seeders: Animal, Breed, AnimalSpecies
+

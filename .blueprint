@@ -1,0 +1,18 @@
+created:
+    - database/factories/AnimalSpeciesFactory.php
+    - database/factories/BreedFactory.php
+    - database/factories/AnimalFactory.php
+    - database/migrations/2022_01_30_031722_create_animal_species_table.php
+    - database/migrations/2022_01_30_031723_create_breeds_table.php
+    - database/migrations/2022_01_30_031724_create_animals_table.php
+    - app/Models/AnimalSpecies.php
+    - app/Models/Breed.php
+    - app/Models/Animal.php
+    - database/seeders/AnimalSeeder.php
+    - database/seeders/BreedSeeder.php
+    - database/seeders/AnimalSpeciesSeeder.php
+models:
+    User: { name: string, email: string, email_verified_at: 'datetime nullable', password: string, remember_token: 'string:100 nullable' }
+    AnimalSpecies: { name: string, relationships: { hasMany: Animals } }
+    Breed: { name: string, relationships: { hasMany: Animals } }
+    Animal: { name: string, breed_id: 'id foreign', bithdate: date, image: 'string nullable', animalspecies_id: 'id foreign' }
